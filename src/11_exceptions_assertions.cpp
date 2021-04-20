@@ -12,7 +12,7 @@ using namespace std;
 //if following symbol not defined then assertions are compiled in
 //if it is defined then they are optimized away to nothing
 //IT MUST BE DEFINED BEFORE YOU INCLUDE <assert>
-#define NDEBUG 
+//#define NDEBUG
 #include <assert.h>     /* assert */
 
 void test_assert(int* myInt) {
@@ -29,7 +29,7 @@ int main()
 {
 	//assertion
 	int * c = NULL;
-//	test_assert (c);
+	test_assert (c);
 	
 	//test some try/catch	
 	int x=1;
@@ -46,7 +46,7 @@ int main()
 	}
 	
 	//test bad alloc (try to alloc too much)
-	const int SIXTEEN_GIG = 4000000000;	//4bytes*4000000000
+	const unsigned int SIXTEEN_GIG = 4000000000;	//4bytes*4000000000
 	try
 	{
 		int *y= new int[SIXTEEN_GIG];
